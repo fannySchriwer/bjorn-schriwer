@@ -3,16 +3,14 @@ import { jsx } from "theme-ui";
 import { Link } from "gatsby";
 
 import Layout from "../components/layout";
-import Image from "../components/image";
 import SEO from "../components/seo";
+import HeroSection from "../components/heroSection";
 
 const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <div sx={{ maxWidth: `300px`, marginBottom: `1.45rem`, marginX: "auto" }}>
-        <Image />
-      </div>
+      <HeroSection />
       <Link to="/page-2/">Go to page 2</Link>
     </Layout>
   );
