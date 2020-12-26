@@ -1,4 +1,5 @@
-import React from "react"
+/** @jsx jsx */
+import { jsx } from "theme-ui"
 import { Link } from "gatsby"
 
 import Layout from "../components/layout"
@@ -9,7 +10,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
+      <div sx={{ maxWidth: `300px`, marginBottom: `1.45rem`, marginY: "auto" }}>
         <Image />
       </div>
       <Link to="/page-2/">Go to page 2</Link>
