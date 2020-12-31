@@ -23,7 +23,10 @@ const HeroSection = () => {
         }}
       >
         <h2>{datoCmsHeroSection.heroTitle}</h2>
-        <p>{datoCmsHeroSection.heroSection}</p>
+        <div
+          dangerouslySetInnerHTML={{ __html: datoCmsHeroSection.heroSection }}
+        />
+        {/* <p>{datoCmsHeroSection.heroSection}</p> */}
       </div>
     </>
   );
