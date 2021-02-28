@@ -3,21 +3,14 @@ import { jsx } from "theme-ui";
 import { Link } from "gatsby";
 import PropTypes from "prop-types";
 
-const Header = ({ siteTitle }) => (
+const Header = ({ logoUrl }) => (
   <header
     sx={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
+      background: `transparent`,
     }}
   >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 sx={{ margin: 0, textAlign: `center` }}>
+    <div>
+      <h1 sx={{ margin: 0, textAlign: `center`, position: "fixed", top: "0" }}>
         <Link
           to="/"
           sx={{
@@ -25,7 +18,11 @@ const Header = ({ siteTitle }) => (
             textDecoration: `none`,
           }}
         >
-          {siteTitle}
+          <img
+            sx={{ maxHeight: "3rem", marginBottom: "0", padding: "8px" }}
+            src={logoUrl}
+            alt="Björn schriwer bygg"
+          />
         </Link>
       </h1>
     </div>
@@ -33,11 +30,11 @@ const Header = ({ siteTitle }) => (
 );
 
 Header.propTypes = {
-  siteTitle: PropTypes.string,
+  logoUrl: PropTypes.string,
 };
 
 Header.defaultProps = {
-  siteTitle: ``,
+  logoUrl: ``,
 };
 
 export default Header;

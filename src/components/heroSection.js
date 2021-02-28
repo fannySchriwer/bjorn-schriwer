@@ -6,8 +6,11 @@ const HeroSection = () => {
     graphql`
       query {
         datoCmsHeroSection {
-          heroSection
+          heroText
           heroTitle
+          backgroundImage {
+            url
+          }
         }
       }
     `
@@ -17,16 +20,18 @@ const HeroSection = () => {
     <>
       <div
         style={{
-          marginX: `auto`,
-          maxWidth: 660,
-          padding: `1.0875rem 0`,
+          height: "95vh",
+          backgroundImage: `url(${datoCmsHeroSection.backgroundImage.url})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          display: "flex",
+          justifyContent: "center",
+          flexDirection: "column",
+          alignItems: "center",
         }}
       >
-        <h2>{datoCmsHeroSection.heroTitle}</h2>
-        <div
-          dangerouslySetInnerHTML={{ __html: datoCmsHeroSection.heroSection }}
-        />
-        {/* <p>{datoCmsHeroSection.heroSection}</p> */}
+        <h2 style={{ color: "white" }}>{datoCmsHeroSection.heroTitle}</h2>
+        <p style={{ color: "white" }}>{datoCmsHeroSection.heroText}</p>
       </div>
     </>
   );

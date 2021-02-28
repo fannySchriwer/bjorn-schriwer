@@ -13,26 +13,25 @@ import Header from "./header";
 import "./layout.css";
 
 const Layout = ({ children }) => {
-  const { datoCmsPageTitle } = useStaticQuery(
+  const { datoCmsHeroSection } = useStaticQuery(
     graphql`
       query {
-        datoCmsPageTitle {
-          title
+        datoCmsHeroSection {
+          id
+          logo {
+            url
+          }
+          backgroundImage {
+            url
+          }
         }
       }
     `
   );
-
   return (
     <>
-      <Header siteTitle={datoCmsPageTitle.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
+      <Header logoUrl={datoCmsHeroSection.logo.url} />
+      <div>
         <main>{children}</main>
         <footer>
           © {new Date().getFullYear()}, Built with
