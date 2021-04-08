@@ -34,4 +34,18 @@ export default {
       fontWeight: "body",
     },
   },
+  p: {
+    fontFamily: "body",
+    lineHeight: "body",
+    fontWeight: "body",
+    fontSize: [1],
+    color: "white",
+  },
+  h2: {
+    fontFamily: "heading",
+    lineHeight: "heading",
+    fontWeight: "heading",
+    fontSize: [3],
+    color: "white",
+  },
 };

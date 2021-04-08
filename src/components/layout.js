@@ -1,11 +1,5 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
-import React from "react";
+/** @jsx jsx */
+import { jsx } from "theme-ui";
 import PropTypes from "prop-types";
 import { useStaticQuery, graphql } from "gatsby";
 
@@ -29,17 +23,30 @@ const Layout = ({ children }) => {
     `
   );
   return (
-    <>
+    <div>
       <Header logoUrl={datoCmsHeroSection.logo.url} />
-      <div>
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </div>
-    </>
+      <main sx={{ minHeight: "70vh", maxWidth: "1130px", marginX: "auto" }}>
+        {children}
+      </main>
+      <footer
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          padding: "16px",
+          maxWidth: "1130px",
+          marginX: "auto",
+        }}
+      >
+        <div>© {new Date().getFullYear()}</div>
+        <div>
+          <h4>Här finns vi</h4>
+        </div>
+        <div>
+          <h4>Kontakta oss</h4>
+        </div>
+      </footer>
+    </div>
   );
 };
 

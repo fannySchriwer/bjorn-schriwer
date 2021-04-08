@@ -1,4 +1,6 @@
-import React from "react";
+/** @jsx jsx */
+import { jsx } from "theme-ui";
+import { Link } from "gatsby";
 import { useStaticQuery, graphql } from "gatsby";
 
 const HeroSection = () => {
@@ -11,29 +13,48 @@ const HeroSection = () => {
           backgroundImage {
             url
           }
+          heroAction {
+            slug
+            text
+          }
         }
       }
     `
   );
+  console.log(datoCmsHeroSection);
 
   return (
-    <>
-      <div
-        style={{
-          height: "95vh",
-          backgroundImage: `url(${datoCmsHeroSection.backgroundImage.url})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          display: "flex",
-          justifyContent: "center",
-          flexDirection: "column",
-          alignItems: "center",
+    <div
+      sx={{
+        height: "90vh",
+        backgroundImage: `url(${datoCmsHeroSection.backgroundImage.url})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        display: "flex",
+        justifyContent: "center",
+        flexDirection: "column",
+        alignItems: "center",
+      }}
+    >
+      <h2 sx={{ color: "white", marginBottom: "1rem" }}>
+        {datoCmsHeroSection.heroTitle}
+      </h2>
+      <p sx={{ color: "white", fontFamily: "Roboto, sans-serif" }}>
+        {datoCmsHeroSection.heroText}
+      </p>
+      <Link
+        to={datoCmsHeroSection.heroAction[0].contact}
+        sx={{
+          padding: "10px 16px",
+          backgroundColor: "black",
+          color: "white",
+          fontSize: "12px",
+          fontFamily: "Roboto, sans-serif",
         }}
       >
-        <h2 style={{ color: "white" }}>{datoCmsHeroSection.heroTitle}</h2>
-        <p style={{ color: "white" }}>{datoCmsHeroSection.heroText}</p>
-      </div>
-    </>
+        {datoCmsHeroSection.heroAction[0].text}
+      </Link>
+    </div>
   );
 };
 
