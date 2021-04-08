@@ -21,7 +21,6 @@ const HeroSection = () => {
       }
     `
   );
-  console.log(datoCmsHeroSection);
 
   return (
     <div

@@ -6,10 +6,12 @@ import PropTypes from "prop-types";
 const Header = ({ logoUrl }) => (
   <header
     sx={{
-      background: "transparent",
+      background: "white",
       display: "flex",
       justifyContent: "space-between",
       padding: "0 16px",
+      position: "sticky",
+      top: "0",
     }}
   >
     <Link
@@ -55,7 +57,7 @@ const Header = ({ logoUrl }) => (
         sx={{ fontFamily: "Roboto, sans-serif", fontSize: "14px" }}
         to="/contact"
       >
-        KONTAKTA OSS
+        KONTAKT
       </Link>
     </div>
   </header>

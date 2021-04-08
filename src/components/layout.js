@@ -25,9 +25,7 @@ const Layout = ({ children }) => {
   return (
     <div>
       <Header logoUrl={datoCmsHeroSection.logo.url} />
-      <main sx={{ minHeight: "70vh", maxWidth: "1130px", marginX: "auto" }}>
-        {children}
-      </main>
+      <main sx={{ minHeight: "70vh" }}>{children}</main>
       <footer
         sx={{
           display: "flex",

@@ -25,27 +25,61 @@ const Services = () => {
   );
   return (
     <section>
-      <h2 sx={{ textAlign: "center", marginY: "24px" }}>
+      <h1
+        sx={{
+          textAlign: "center",
+          marginTop: "32px",
+          fontSize: "32px",
+          fontFamily: "Roboto, sans-serif",
+          fontWeight: "400",
+        }}
+      >
         {datoCmsVaraTjanster.title}
-      </h2>
+      </h1>
       <div>
         {datoCmsVaraTjanster.contentSections.map((section) => (
-          <div>
+          <div sx={{ maxWidth: "700px", marginX: "auto", marginTop: "46px" }}>
             <h4>{section.title}</h4>
-            <p>{section.description}</p>
+            <p
+              sx={{
+                fontFamily: "Roboto, sans-serif",
+                fontSize: "14px",
+              }}
+            >
+              {section.description}
+            </p>
           </div>
         ))}
       </div>
-      <h3 sx={{ marginY: "50px", textAlign: "center" }}>
+      <h3
+        sx={{
+          marginTop: "46px",
+          textAlign: "center",
+          fontSize: "26px",
+          fontFamily: "Roboto, sans-serif",
+          fontWeight: "400",
+        }}
+      >
         {datoCmsVaraTjanster.serviceSectionTitle}
       </h3>
       <div sx={{ display: "flex", justifyContent: "center", paddingY: "24px" }}>
         {datoCmsVaraTjanster.tjanster.map((service) => (
           <div sx={{ margin: "18px" }}>
-            <h4>{service.namn}</h4>
+            <h4
+              sx={{
+                fontSize: "22px",
+                fontFamily: "Roboto, sans-serif",
+                fontWeight: "400",
+                textAlign: "center",
+              }}
+            >
+              {service.namn}
+            </h4>
             <img
               sx={{
-                height: "150px",
+                height: "350px",
+                width: "250px",
+                objectFit: "cover",
                 marginY: "0",
                 marginX: "auto",
                 display: "block",
