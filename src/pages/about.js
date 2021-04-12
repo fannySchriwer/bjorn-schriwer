@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui";
+import { jsx, Styled } from "theme-ui";
 import { useStaticQuery, graphql } from "gatsby";
 
 import SEO from "../components/seo";
@@ -31,37 +31,28 @@ const AboutPage = () => {
     <Layout>
       <FullPageContainer>
         <SEO title="Om oss" />
-        <h1
-          sx={{
-            textAlign: "center",
-            marginTop: "32px",
-            fontSize: "32px",
-            fontFamily: "Roboto, sans-serif",
-            fontWeight: "400",
-          }}
-        >
-          {datoCmsOmOss.pageTitle}
-        </h1>
-        <h4 sx={{ textAlign: "center", marginTop: "46px" }}>
-          {datoCmsOmOss.pageIntroduction}
-        </h4>
-        <p
-          sx={{
-            fontFamily: "Roboto, sans-serif",
-            fontSize: "14px",
-            maxWidth: "700px",
-            marginX: "auto",
-            textAlign: "center",
-          }}
-        >
-          {datoCmsOmOss.aboutIntro}
-        </p>
+        <Styled.h1>{datoCmsOmOss.pageTitle}</Styled.h1>
+        <div sx={{ padding: ["0 16px", "0 24px"] }}>
+          <Styled.h3 sx={{ textAlign: "center", marginTop: "46px" }}>
+            {datoCmsOmOss.pageIntroduction}
+          </Styled.h3>
+          <Styled.p
+            sx={{
+              maxWidth: "700px",
+              marginX: "auto",
+              textAlign: "center",
+            }}
+          >
+            {datoCmsOmOss.aboutIntro}
+          </Styled.p>
+        </div>
         <div sx={{ marginTop: "65px" }}>
           {datoCmsOmOss.sections.map((section, index) => (
             <div
               key={index}
               sx={{
                 display: "flex",
+                flexDirection: ["column", "column", "row"],
                 justifyContent: "center",
                 marginY: "32px",
               }}
@@ -70,16 +61,21 @@ const AboutPage = () => {
                 <img
                   src={section.image.url}
                   alt={section.image.alt}
-                  sx={{ width: "100%" }}
+                  sx={{ width: "100%", maxHeight: "35vh", objectFit: "cover" }}
                 />
               </div>
-              <div sx={{ flex: "2", padding: "0 24px" }}>
-                <h3 sx={{ fontFamily: "Roboto, sans-serif", fontSize: "18px" }}>
-                  {section.title}
-                </h3>
-                <p sx={{ fontFamily: "Roboto, sans-serif", fontSize: "14px" }}>
+              <div sx={{ flex: "2", padding: ["0 20px", "0 24px"] }}>
+                <Styled.h3>{section.title}</Styled.h3>
+                {/* <div
+                  dangerouslySetInnerHTML={{ __html: section.description }}
+                /> */}
+                <Styled.p
+                  sx={{
+                    maxWidth: "720px",
+                  }}
+                >
                   {section.description}
-                </p>
+                </Styled.p>
               </div>
             </div>
           ))}

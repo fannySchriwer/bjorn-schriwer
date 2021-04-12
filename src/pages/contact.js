@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui";
+import { jsx, Styled } from "theme-ui";
 import { useStaticQuery, graphql } from "gatsby";
 
 import SEO from "../components/seo";
@@ -21,18 +21,8 @@ const ContactPage = () => {
     <Layout>
       <FullPageContainer>
         <SEO title="Kontakta oss" />
-        <h1
-          sx={{
-            textAlign: "center",
-            marginTop: "32px",
-            fontSize: "32px",
-            fontFamily: "Roboto, sans-serif",
-            fontWeight: "400",
-          }}
-        >
-          {datoCmsKontakt.pageTitle}
-        </h1>
-        <p>{datoCmsKontakt.pageContent}</p>
+        <Styled.h1>{datoCmsKontakt.pageTitle}</Styled.h1>
+        <Styled.p>{datoCmsKontakt.pageContent}</Styled.p>
       </FullPageContainer>
     </Layout>
   );

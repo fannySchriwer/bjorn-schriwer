@@ -2,6 +2,7 @@
 import { jsx } from "theme-ui";
 import { Link } from "gatsby";
 import PropTypes from "prop-types";
+import MobileNavigation from "./mobileNavigation";
 
 const Header = ({ logoUrl }) => (
   <header
@@ -11,7 +12,7 @@ const Header = ({ logoUrl }) => (
       justifyContent: "space-between",
       padding: "0 16px",
       position: "sticky",
-      top: "0",
+      top: "0px",
     }}
   >
     <Link
@@ -31,7 +32,7 @@ const Header = ({ logoUrl }) => (
     <div
       sx={{
         alignItems: "center",
-        display: "flex",
+        display: ["none", "flex"],
         a: {
           color: "black",
           fontWeight: "500",
@@ -60,6 +61,7 @@ const Header = ({ logoUrl }) => (
         KONTAKT
       </Link>
     </div>
+    <MobileNavigation />
   </header>
 );
 

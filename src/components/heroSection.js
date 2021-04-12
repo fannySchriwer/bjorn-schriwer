@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui";
+import { jsx, Styled } from "theme-ui";
 import { Link } from "gatsby";
 import { useStaticQuery, graphql } from "gatsby";
 
@@ -33,22 +33,20 @@ const HeroSection = () => {
         justifyContent: "center",
         flexDirection: "column",
         alignItems: "center",
+        padding: [3, 4],
       }}
     >
-      <h2 sx={{ color: "white", marginBottom: "1rem" }}>
-        {datoCmsHeroSection.heroTitle}
-      </h2>
-      <p sx={{ color: "white", fontFamily: "Roboto, sans-serif" }}>
-        {datoCmsHeroSection.heroText}
-      </p>
+      <Styled.h2>{datoCmsHeroSection.heroTitle}</Styled.h2>
+      <Styled.h4>{datoCmsHeroSection.heroText}</Styled.h4>
       <Link
-        to={datoCmsHeroSection.heroAction[0].contact}
+        to={datoCmsHeroSection.heroAction[0].slug}
         sx={{
           padding: "10px 16px",
           backgroundColor: "black",
           color: "white",
           fontSize: "12px",
           fontFamily: "Roboto, sans-serif",
+          textDecoration: "none",
         }}
       >
         {datoCmsHeroSection.heroAction[0].text}

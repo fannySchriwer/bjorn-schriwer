@@ -9,6 +9,8 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
+    "gatsby-image",
+    "gatsby-plugin-theme-ui",
     {
       resolve: `gatsby-source-datocms`,
       options: {

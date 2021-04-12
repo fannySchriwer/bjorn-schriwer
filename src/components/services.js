@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui";
+import { jsx, Styled } from "theme-ui";
 import { useStaticQuery, graphql } from "gatsby";
 
 const Services = () => {
@@ -25,29 +25,19 @@ const Services = () => {
   );
   return (
     <section>
-      <h1
-        sx={{
-          textAlign: "center",
-          marginTop: "32px",
-          fontSize: "32px",
-          fontFamily: "Roboto, sans-serif",
-          fontWeight: "400",
-        }}
-      >
-        {datoCmsVaraTjanster.title}
-      </h1>
+      <Styled.h1>{datoCmsVaraTjanster.title}</Styled.h1>
       <div>
         {datoCmsVaraTjanster.contentSections.map((section) => (
-          <div sx={{ maxWidth: "700px", marginX: "auto", marginTop: "46px" }}>
-            <h4>{section.title}</h4>
-            <p
-              sx={{
-                fontFamily: "Roboto, sans-serif",
-                fontSize: "14px",
-              }}
-            >
-              {section.description}
-            </p>
+          <div
+            sx={{
+              maxWidth: "850px",
+              marginX: "auto",
+              marginTop: ["30px", "60px"],
+              paddingX: [2, 3],
+            }}
+          >
+            <Styled.h3>{section.title}</Styled.h3>
+            <Styled.p>{section.description}</Styled.p>
           </div>
         ))}
       </div>
@@ -62,19 +52,24 @@ const Services = () => {
       >
         {datoCmsVaraTjanster.serviceSectionTitle}
       </h3>
-      <div sx={{ display: "flex", justifyContent: "center", paddingY: "24px" }}>
+      <div
+        sx={{
+          display: "flex",
+          flexDirection: ["column", "row"],
+          justifyContent: "center",
+          flexWrap: "wrap",
+          paddingY: "24px",
+        }}
+      >
         {datoCmsVaraTjanster.tjanster.map((service) => (
-          <div sx={{ margin: "18px" }}>
-            <h4
+          <div sx={{ margin: "12px" }}>
+            <Styled.h3
               sx={{
-                fontSize: "22px",
-                fontFamily: "Roboto, sans-serif",
-                fontWeight: "400",
                 textAlign: "center",
               }}
             >
               {service.namn}
-            </h4>
+            </Styled.h3>
             <img
               sx={{
                 height: "350px",
