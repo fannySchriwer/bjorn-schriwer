@@ -32,12 +32,27 @@ const AboutPage = () => {
       <FullPageContainer>
         <SEO title="Om oss" />
         <Styled.h1>{datoCmsOmOss.pageTitle}</Styled.h1>
-        <div sx={{ marginTop: "45px", display: "flex" }}>
-          <div sx={{ width: "45%" }}>
+        <div
+          sx={{
+            marginTop: "45px",
+            display: "flex",
+            flexDirection: ["column", "column", "row"],
+          }}
+        >
+          <div
+            sx={{
+              width: ["100%", "100%", "45%"],
+              padding: ["8px", "8px", "0px"],
+            }}
+          >
             <img
               src={datoCmsOmOss.aboutImage.url}
               alt={datoCmsOmOss.aboutImage.alt}
-              sx={{ width: "100%", objectFit: "cover" }}
+              sx={{
+                width: "100%",
+                maxHeight: ["75vh", "70vh", "unset"],
+                objectFit: "cover",
+              }}
             />
           </div>
           <div>
@@ -51,7 +66,7 @@ const AboutPage = () => {
                 sx={{
                   flex: "1",
                   padding: ["8px 16px", "12px 32px"],
-                  maxWidth: "600px",
+                  maxWidth: "700px",
                 }}
               >
                 <Styled.h3>{section.title}</Styled.h3>

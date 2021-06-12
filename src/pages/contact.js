@@ -32,13 +32,19 @@ const ContactPage = () => {
         <div
           sx={{
             display: "flex",
+            flexDirection: ["column", "column", "row"],
             justifyContent: "center",
-            alignItems: "center",
+            alignItems: ["flex-start", "flex-start", "center"],
+            marginBottom: "42px",
           }}
         >
-          <div sx={{ padding: "16px 48px" }}>
+          <div sx={{ padding: ["36px 16px", "36px", "16px 48px"] }}>
             <Styled.h1
-              sx={{ textAlign: "left", marginLeft: "0px", paddingLeft: "0px" }}
+              sx={{
+                textAlign: "center",
+                marginLeft: "0px",
+                paddingLeft: "0px",
+              }}
             >
               {datoCmsContact.pageTitle}
             </Styled.h1>
@@ -55,9 +61,14 @@ const ContactPage = () => {
               </a>
             </Styled.p>
           </div>
-          <div sx={{ padding: "16px 48px" }}>
+          <div
+            sx={{
+              padding: ["8px", "36px", "16px 48px"],
+              maxWidth: "800px",
+            }}
+          >
             <img
-              sx={{ maxWidth: "600px", maxHeight: "100%" }}
+              sx={{ maxWidth: ["100%"], maxHeight: "100%" }}
               src={datoCmsContact.image.url}
               alt={datoCmsContact.image.alt}
             />

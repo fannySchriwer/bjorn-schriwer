@@ -58,24 +58,6 @@ const Header = ({ logoUrl }) => (
             fontSize: "14px",
             fontFamily: "Lato, sans-serif",
             display: "inline-block",
-            position: "relative",
-            after: {
-              background: "none repeat scroll 0 0 transparent",
-              bottom: "0px",
-              content: " ",
-              display: "block",
-              height: "2px",
-              left: "50%",
-              position: "absolute",
-              transition: "width 0.3s ease 0s, left 0.3s ease 0s",
-              width: "0px",
-            },
-            hover: {
-              after: {
-                width: "100%",
-                left: 0,
-              },
-            },
           },
         }}
       >

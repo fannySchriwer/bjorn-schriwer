@@ -30,19 +30,35 @@ const Services = () => {
   return (
     <section>
       <Styled.h1>{datoCmsVaraTjanster.title}</Styled.h1>
-      <div sx={{ marginTop: "45px", display: "flex" }}>
-        <div sx={{ width: "45%" }}>
+      <div
+        sx={{
+          marginTop: "45px",
+          display: "flex",
+          flexDirection: ["column", "column", "row"],
+        }}
+      >
+        <div
+          sx={{
+            width: ["100%", "100%", "45%"],
+            padding: ["8px", "8px", "0px"],
+          }}
+        >
           <img
             src={datoCmsVaraTjanster.serviceImage.url}
             alt={datoCmsVaraTjanster.serviceImage.alt}
-            sx={{ width: "100%", objectFit: "cover" }}
+            sx={{
+              width: "100%",
+              maxHeight: ["75vh", "70vh", "unset"],
+              objectFit: "cover",
+            }}
           />
         </div>
         <div>
           {datoCmsVaraTjanster.contentSections.map((section) => (
             <div
+              key={section.title}
               sx={{
-                maxWidth: "600px",
+                maxWidth: "700px",
                 marginX: "auto",
                 padding: ["8px 16px", "12px 32px"],
               }}
@@ -53,17 +69,7 @@ const Services = () => {
           ))}
         </div>
       </div>
-      <Styled.h1
-        sx={{
-          marginTop: "46px",
-          textAlign: "center",
-          fontSize: "26px",
-          fontFamily: "Lato, sans-serif",
-          fontWeight: "400",
-        }}
-      >
-        {datoCmsVaraTjanster.serviceSectionTitle}
-      </Styled.h1>
+      <Styled.h1>{datoCmsVaraTjanster.serviceSectionTitle}</Styled.h1>
       <div
         sx={{
           display: "flex",
@@ -74,10 +80,11 @@ const Services = () => {
         }}
       >
         {datoCmsVaraTjanster.tjanster.map((service) => (
-          <div sx={{ margin: "12px" }}>
+          <div key={service.namn} sx={{ margin: "12px" }}>
             <Styled.h3
               sx={{
                 textAlign: "center",
+                padding: ["8px", "0px"],
               }}
             >
               {service.namn}
@@ -85,7 +92,7 @@ const Services = () => {
             <img
               sx={{
                 height: "350px",
-                width: "250px",
+                width: ["300px", "250px"],
                 objectFit: "cover",
                 marginY: "0",
                 marginX: "auto",

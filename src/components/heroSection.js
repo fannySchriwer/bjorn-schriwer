@@ -44,14 +44,16 @@ const HeroSection = () => {
         }}
       >
         <Styled.h2>{datoCmsHeroSection.heroTitle}</Styled.h2>
-        <Styled.h4>{datoCmsHeroSection.heroText}</Styled.h4>
+        <Styled.h4 sx={{ color: "white", fontWeight: "400" }}>
+          {datoCmsHeroSection.heroText}
+        </Styled.h4>
         <Link
           to={datoCmsHeroSection.heroAction[0].slug}
           sx={{
-            padding: "10px 16px",
+            padding: ["12px 18px", "10px 16px"],
             backgroundColor: "#030523",
             color: "white",
-            fontSize: "12px",
+            fontSize: ["16px", "14px"],
             fontFamily: "Lato, sans-serif",
             textDecoration: "none",
           }}
