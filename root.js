@@ -13,7 +13,7 @@ export const wrapRootElement = ({ element }) => {
             min-width: 320px;
           }
           body {
-            margin: 0;
+            margin: 0px;
             box-sizing: border-box;
           }
           [data-whatintent="mouse"] *:focus {

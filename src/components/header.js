@@ -8,60 +8,89 @@ const Header = ({ logoUrl }) => (
   <header
     sx={{
       background: "white",
-      display: "flex",
-      justifyContent: "space-between",
-      padding: "0 16px",
       position: "sticky",
+      display: "flex",
+      alignItems: "center",
       top: "0px",
+      paddingX: ["12px", "0px"],
     }}
   >
-    <Link
-      to="/"
-      sx={{
-        color: `white`,
-        textDecoration: `none`,
-        display: "flex",
-      }}
-    >
-      <img
-        sx={{ maxHeight: "3.5rem", marginBottom: "0", padding: "8px" }}
-        src={logoUrl}
-        alt="Björn schriwer bygg"
-      />
-    </Link>
     <div
       sx={{
-        alignItems: "center",
-        display: ["none", "flex"],
-        a: {
-          color: "black",
-          fontWeight: "500",
-          textDecoration: "none",
-          paddingX: "12px",
-          fontFamily: "Roboto, sans-serif",
-        },
+        display: "flex",
+        position: "relative",
+        width: "100%",
+        justifyContent: ["center", "space-between"],
+        paddingX: ["0px", "12px", "24px"],
       }}
     >
       <Link
-        sx={{ fontFamily: "Roboto, sans-serif", fontSize: "14px" }}
-        to="/about"
+        to="/"
+        sx={{
+          color: `white`,
+          textDecoration: `none`,
+          display: "flex",
+          marginBottom: "0",
+        }}
       >
-        OM OSS
+        <img
+          sx={{
+            maxHeight: "4rem",
+            marginBottom: "0px",
+            padding: "6px",
+          }}
+          src={logoUrl}
+          alt="Björn Schriwer bygg, söderort"
+        />
       </Link>
-      <Link
-        sx={{ fontFamily: "Roboto, sans-serif", fontSize: "14px" }}
-        to="/services"
+      <ul
+        sx={{
+          alignItems: "center",
+          display: ["none", "flex"],
+          justifyContent: "center",
+          padding: "8px 0px 12px",
+          margin: "0px",
+          a: {
+            color: "black",
+            fontWeight: "500",
+            textDecoration: "none",
+            paddingX: "24px",
+            fontSize: "14px",
+            fontFamily: "Lato, sans-serif",
+            display: "inline-block",
+            position: "relative",
+            after: {
+              background: "none repeat scroll 0 0 transparent",
+              bottom: "0px",
+              content: " ",
+              display: "block",
+              height: "2px",
+              left: "50%",
+              position: "absolute",
+              transition: "width 0.3s ease 0s, left 0.3s ease 0s",
+              width: "0px",
+            },
+            hover: {
+              after: {
+                width: "100%",
+                left: 0,
+              },
+            },
+          },
+        }}
       >
-        VÅRA TJÄNSTER
-      </Link>
-      <Link
-        sx={{ fontFamily: "Roboto, sans-serif", fontSize: "14px" }}
-        to="/contact"
-      >
-        KONTAKT
-      </Link>
+        <li sx={{ listStyle: "none", marginBottom: "0" }}>
+          <Link to="/about">OM OSS</Link>
+        </li>
+        <li sx={{ listStyle: "none", marginBottom: "0" }}>
+          <Link to="/services">VÅRA TJÄNSTER</Link>
+        </li>
+        <li sx={{ listStyle: "none", marginBottom: "0" }}>
+          <Link to="/contact">KONTAKT</Link>
+        </li>
+      </ul>
+      <MobileNavigation />
     </div>
-    <MobileNavigation />
   </header>
 );
 

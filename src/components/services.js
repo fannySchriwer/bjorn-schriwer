@@ -8,6 +8,10 @@ const Services = () => {
       query {
         datoCmsVaraTjanster {
           title
+          serviceImage {
+            alt
+            url
+          }
           contentSections {
             description
             title
@@ -26,32 +30,40 @@ const Services = () => {
   return (
     <section>
       <Styled.h1>{datoCmsVaraTjanster.title}</Styled.h1>
-      <div>
-        {datoCmsVaraTjanster.contentSections.map((section) => (
-          <div
-            sx={{
-              maxWidth: "850px",
-              marginX: "auto",
-              marginTop: ["30px", "60px"],
-              paddingX: [2, 3],
-            }}
-          >
-            <Styled.h3>{section.title}</Styled.h3>
-            <Styled.p>{section.description}</Styled.p>
-          </div>
-        ))}
+      <div sx={{ marginTop: "45px", display: "flex" }}>
+        <div sx={{ width: "45%" }}>
+          <img
+            src={datoCmsVaraTjanster.serviceImage.url}
+            alt={datoCmsVaraTjanster.serviceImage.alt}
+            sx={{ width: "100%", objectFit: "cover" }}
+          />
+        </div>
+        <div>
+          {datoCmsVaraTjanster.contentSections.map((section) => (
+            <div
+              sx={{
+                maxWidth: "600px",
+                marginX: "auto",
+                padding: ["8px 16px", "12px 32px"],
+              }}
+            >
+              <Styled.h3>{section.title}</Styled.h3>
+              <Styled.p>{section.description}</Styled.p>
+            </div>
+          ))}
+        </div>
       </div>
-      <h3
+      <Styled.h1
         sx={{
           marginTop: "46px",
           textAlign: "center",
           fontSize: "26px",
-          fontFamily: "Roboto, sans-serif",
+          fontFamily: "Lato, sans-serif",
           fontWeight: "400",
         }}
       >
         {datoCmsVaraTjanster.serviceSectionTitle}
-      </h3>
+      </Styled.h1>
       <div
         sx={{
           display: "flex",

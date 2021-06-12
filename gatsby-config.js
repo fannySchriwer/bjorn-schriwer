@@ -4,9 +4,9 @@ require("dotenv").config({ path: `./.env.${env}` });
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Björn Schriwer, bygg och badrum i söderort`,
+    description: `Ha oss i åtanke för er nästa renovering. Stort eller litet vi hjälper dig hela vägen!`,
+    author: `Fanny Schriwer`,
   },
   plugins: [
     "gatsby-image",
@@ -60,7 +60,6 @@ module.exports = {
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
-        display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },

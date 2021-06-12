@@ -61,6 +61,10 @@ const Hamburger = ({ dropdownOpen, setDropdownOpen }) => {
       onClick={() => setDropdownOpen(!dropdownOpen)}
       sx={{
         cursor: "pointer",
+        position: "absolute",
+        top: "50%",
+        transform: "translateY(-50%)",
+        right: "0px",
         backgroundColor: "white",
         border: "none",
         height: "30px",
@@ -68,9 +72,9 @@ const Hamburger = ({ dropdownOpen, setDropdownOpen }) => {
         borderRadius: 2,
         boxShadow: "hover",
         marginLeft: "auto",
+        marginTop: "0px",
         zIndex: 99,
         padding: "0px",
-        marginTop: "10px",
         display: ["block", "none"],
       }}
     >

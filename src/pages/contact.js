@@ -7,12 +7,20 @@ import Layout from "../components/layout";
 import FullPageContainer from "../components/fullPageContainer";
 
 const ContactPage = () => {
-  const { datoCmsKontakt } = useStaticQuery(
+  const { datoCmsKontakt: datoCmsContact, datoCmsFooter } = useStaticQuery(
     graphql`
       query {
         datoCmsKontakt {
           pageTitle
           pageContent
+          image {
+            alt
+            url
+          }
+        }
+        datoCmsFooter {
+          email
+          phone
         }
       }
     `
@@ -21,8 +29,40 @@ const ContactPage = () => {
     <Layout>
       <FullPageContainer>
         <SEO title="Kontakta oss" />
-        <Styled.h1>{datoCmsKontakt.pageTitle}</Styled.h1>
-        <Styled.p>{datoCmsKontakt.pageContent}</Styled.p>
+        <div
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <div sx={{ padding: "16px 48px" }}>
+            <Styled.h1
+              sx={{ textAlign: "left", marginLeft: "0px", paddingLeft: "0px" }}
+            >
+              {datoCmsContact.pageTitle}
+            </Styled.h1>
+            <Styled.p sx={{ marginBottom: "8px" }}>
+              Tele: {datoCmsFooter.phone}
+            </Styled.p>
+            <Styled.p sx={{ marginBottom: "8px" }}>
+              Email:{" "}
+              <a
+                href={`mailto: ${datoCmsFooter.email}`}
+                sx={{ color: "black", fontWeight: "600" }}
+              >
+                {datoCmsFooter.email}
+              </a>
+            </Styled.p>
+          </div>
+          <div sx={{ padding: "16px 48px" }}>
+            <img
+              sx={{ maxWidth: "600px", maxHeight: "100%" }}
+              src={datoCmsContact.image.url}
+              alt={datoCmsContact.image.alt}
+            />
+          </div>
+        </div>
       </FullPageContainer>
     </Layout>
   );

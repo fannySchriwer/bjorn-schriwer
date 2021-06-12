@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui";
+import { jsx, Styled } from "theme-ui";
 import PropTypes from "prop-types";
 import { useStaticQuery, graphql } from "gatsby";
 
@@ -7,7 +7,7 @@ import Header from "./header";
 import "./layout.css";
 
 const Layout = ({ children }) => {
-  const { datoCmsHeroSection } = useStaticQuery(
+  const { datoCmsHeroSection, datoCmsFooter } = useStaticQuery(
     graphql`
       query {
         datoCmsHeroSection {
@@ -19,6 +19,13 @@ const Layout = ({ children }) => {
             url
           }
         }
+        datoCmsFooter {
+          email
+          phone
+          adress
+          orgNumber
+          postCode
+        }
       }
     `
   );
@@ -29,19 +36,32 @@ const Layout = ({ children }) => {
       <footer
         sx={{
           display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          padding: "16px",
+          justifyContent: "space-around",
+          padding: "24px",
           maxWidth: "1130px",
           marginX: "auto",
         }}
       >
-        <div>© {new Date().getFullYear()}</div>
-        <div>
-          <h4>Här finns vi</h4>
-        </div>
         <div>
           <h4>Kontakta oss</h4>
+          <Styled.p sx={{ marginBottom: "6px" }}>
+            {datoCmsFooter.email}
+          </Styled.p>
+          <Styled.p sx={{ marginBottom: "6px" }}>
+            {datoCmsFooter.phone}
+          </Styled.p>
+          <Styled.p sx={{ marginBottom: "6px" }}>
+            Org.nr: {datoCmsFooter.orgNumber}
+          </Styled.p>
+        </div>
+        <div>
+          <h4>Här finns vi</h4>
+          <Styled.p sx={{ marginBottom: "6px" }}>
+            {datoCmsFooter.adress}
+          </Styled.p>
+          <Styled.p sx={{ marginBottom: "6px" }}>
+            {datoCmsFooter.postCode}
+          </Styled.p>
         </div>
       </footer>
     </div>

@@ -29,28 +29,36 @@ const HeroSection = () => {
         backgroundImage: `url(${datoCmsHeroSection.backgroundImage.url})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
-        display: "flex",
-        justifyContent: "center",
-        flexDirection: "column",
-        alignItems: "center",
-        padding: [3, 4],
       }}
     >
-      <Styled.h2>{datoCmsHeroSection.heroTitle}</Styled.h2>
-      <Styled.h4>{datoCmsHeroSection.heroText}</Styled.h4>
-      <Link
-        to={datoCmsHeroSection.heroAction[0].slug}
+      <div
         sx={{
-          padding: "10px 16px",
-          backgroundColor: "black",
-          color: "white",
-          fontSize: "12px",
-          fontFamily: "Roboto, sans-serif",
-          textDecoration: "none",
+          background: "rgba(0, 0, 0, 0.3)",
+          width: "100%",
+          height: "100%",
+          padding: [3, 4],
+          display: "flex",
+          justifyContent: "center",
+          flexDirection: "column",
+          alignItems: "center",
         }}
       >
-        {datoCmsHeroSection.heroAction[0].text}
-      </Link>
+        <Styled.h2>{datoCmsHeroSection.heroTitle}</Styled.h2>
+        <Styled.h4>{datoCmsHeroSection.heroText}</Styled.h4>
+        <Link
+          to={datoCmsHeroSection.heroAction[0].slug}
+          sx={{
+            padding: "10px 16px",
+            backgroundColor: "#030523",
+            color: "white",
+            fontSize: "12px",
+            fontFamily: "Lato, sans-serif",
+            textDecoration: "none",
+          }}
+        >
+          {datoCmsHeroSection.heroAction[0].text}
+        </Link>
+      </div>
     </div>
   );
 };

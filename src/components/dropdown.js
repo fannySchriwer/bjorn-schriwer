@@ -8,11 +8,11 @@ const Dropdown = ({ dropdownOpen }) => {
       sx={{
         backgroundColor: "white",
         position: "fixed",
-        zIndex: 2,
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
+        zIndex: "2",
+        top: "0px",
+        left: "0px",
+        right: "0px",
+        bottom: "0px",
         display: "flex",
         transform: dropdownOpen ? "translateY(0)" : "translateY(-100%)",
         transition: "transform 0.3s ease-in-out",
@@ -33,19 +33,19 @@ const Dropdown = ({ dropdownOpen }) => {
         }}
       >
         <Link
-          sx={{ fontFamily: "Roboto, sans-serif", fontSize: "14px" }}
+          sx={{ fontFamily: "Lato, sans-serif", fontSize: "14px" }}
           to="/about"
         >
           OM OSS
         </Link>
         <Link
-          sx={{ fontFamily: "Roboto, sans-serif", fontSize: "14px" }}
+          sx={{ fontFamily: "Lato, sans-serif", fontSize: "14px" }}
           to="/services"
         >
           VÅRA TJÄNSTER
         </Link>
         <Link
-          sx={{ fontFamily: "Roboto, sans-serif", fontSize: "14px" }}
+          sx={{ fontFamily: "Lato, sans-serif", fontSize: "14px" }}
           to="/contact"
         >
           KONTAKT

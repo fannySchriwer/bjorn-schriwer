@@ -14,13 +14,13 @@ const AboutPage = () => {
           pageTitle
           pageIntroduction
           aboutIntro
+          aboutImage {
+            alt
+            url
+          }
           sections {
             description
             title
-            image {
-              alt
-              url
-            }
           }
         }
       }
@@ -32,53 +32,33 @@ const AboutPage = () => {
       <FullPageContainer>
         <SEO title="Om oss" />
         <Styled.h1>{datoCmsOmOss.pageTitle}</Styled.h1>
-        <div sx={{ padding: ["0 16px", "0 24px"] }}>
-          <Styled.h3 sx={{ textAlign: "center", marginTop: "46px" }}>
-            {datoCmsOmOss.pageIntroduction}
-          </Styled.h3>
-          <Styled.p
-            sx={{
-              maxWidth: "700px",
-              marginX: "auto",
-              textAlign: "center",
-            }}
-          >
-            {datoCmsOmOss.aboutIntro}
-          </Styled.p>
-        </div>
-        <div sx={{ marginTop: "65px" }}>
-          {datoCmsOmOss.sections.map((section, index) => (
-            <div
-              key={index}
-              sx={{
-                display: "flex",
-                flexDirection: ["column", "column", "row"],
-                justifyContent: "center",
-                marginY: "32px",
-              }}
-            >
-              <div sx={{ flex: "1" }}>
-                <img
-                  src={section.image.url}
-                  alt={section.image.alt}
-                  sx={{ width: "100%", maxHeight: "35vh", objectFit: "cover" }}
-                />
-              </div>
-              <div sx={{ flex: "2", padding: ["0 20px", "0 24px"] }}>
-                <Styled.h3>{section.title}</Styled.h3>
-                {/* <div
-                  dangerouslySetInnerHTML={{ __html: section.description }}
-                /> */}
-                <Styled.p
-                  sx={{
-                    maxWidth: "720px",
-                  }}
-                >
-                  {section.description}
-                </Styled.p>
-              </div>
+        <div sx={{ marginTop: "45px", display: "flex" }}>
+          <div sx={{ width: "45%" }}>
+            <img
+              src={datoCmsOmOss.aboutImage.url}
+              alt={datoCmsOmOss.aboutImage.alt}
+              sx={{ width: "100%", objectFit: "cover" }}
+            />
+          </div>
+          <div>
+            <div sx={{ padding: ["8px 16px", "12px 32px"], maxWidth: "600px" }}>
+              <Styled.h3>{datoCmsOmOss.pageIntroduction}</Styled.h3>
+              <Styled.p>{datoCmsOmOss.aboutIntro}</Styled.p>
             </div>
-          ))}
+            {datoCmsOmOss.sections.map((section, index) => (
+              <div
+                key={index}
+                sx={{
+                  flex: "1",
+                  padding: ["8px 16px", "12px 32px"],
+                  maxWidth: "600px",
+                }}
+              >
+                <Styled.h3>{section.title}</Styled.h3>
+                <Styled.p>{section.description}</Styled.p>
+              </div>
+            ))}
+          </div>
         </div>
       </FullPageContainer>
     </Layout>
