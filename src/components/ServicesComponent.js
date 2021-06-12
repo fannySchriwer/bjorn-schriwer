@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui";
 import { useStaticQuery, graphql } from "gatsby";
+import Image from "./image";
 
 const Services = () => {
   const { datoCmsVaraTjanster } = useStaticQuery(
@@ -89,7 +90,7 @@ const Services = () => {
             >
               {service.namn}
             </Styled.h3>
-            <img
+            <Image
               sx={{
                 height: "350px",
                 width: ["300px", "250px"],

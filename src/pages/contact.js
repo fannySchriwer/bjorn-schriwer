@@ -2,9 +2,10 @@
 import { jsx, Styled } from "theme-ui";
 import { useStaticQuery, graphql } from "gatsby";
 
-import SEO from "../components/seo";
-import Layout from "../components/layout";
-import FullPageContainer from "../components/fullPageContainer";
+import SEO from "../components/SEO";
+import Layout from "../components/Layout";
+import FullPageContainer from "../components/FullPageContainer";
+import Image from "../components/Image";
 
 const ContactPage = () => {
   const { datoCmsKontakt: datoCmsContact, datoCmsFooter } = useStaticQuery(
@@ -67,7 +68,7 @@ const ContactPage = () => {
               maxWidth: "800px",
             }}
           >
-            <img
+            <Image
               sx={{ maxWidth: ["100%"], maxHeight: "100%" }}
               src={datoCmsContact.image.url}
               alt={datoCmsContact.image.alt}

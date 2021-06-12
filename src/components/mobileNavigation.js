@@ -1,8 +1,8 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import { useState } from "react";
-import Hamburger from "./hamburger";
-import Dropdown from "./dropdown";
+import Hamburger from "./Hamburger";
+import Dropdown from "./Dropdown";
 import { Fragment } from "react";
 
 const MobileNavigation = () => {

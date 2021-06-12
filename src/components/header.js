@@ -2,7 +2,7 @@
 import { jsx } from "theme-ui";
 import { Link } from "gatsby";
 import PropTypes from "prop-types";
-import MobileNavigation from "./mobileNavigation";
+import MobileNavigation from "./MobileNavigation";
 
 const Header = ({ logoUrl }) => (
   <header

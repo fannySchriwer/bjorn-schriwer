@@ -2,9 +2,10 @@
 import { jsx, Styled } from "theme-ui";
 import { useStaticQuery, graphql } from "gatsby";
 
-import SEO from "../components/seo";
-import Layout from "../components/layout";
-import FullPageContainer from "../components/fullPageContainer";
+import SEO from "../components/SEO";
+import Layout from "../components/Layout";
+import FullPageContainer from "../components/FullPageContainer";
+import Image from "../components/Image";
 
 const AboutPage = () => {
   const { datoCmsOmOss } = useStaticQuery(
@@ -45,7 +46,7 @@ const AboutPage = () => {
               padding: ["8px", "8px", "0px"],
             }}
           >
-            <img
+            <Image
               src={datoCmsOmOss.aboutImage.url}
               alt={datoCmsOmOss.aboutImage.alt}
               sx={{
