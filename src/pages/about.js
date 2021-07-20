@@ -5,7 +5,6 @@ import { useStaticQuery, graphql } from "gatsby";
 import SEO from "../components/SEO";
 import Layout from "../components/Layout";
 import FullPageContainer from "../components/FullPageContainer";
-import Image from "../components/Image";
 
 const AboutPage = () => {
   const { datoCmsOmOss } = useStaticQuery(
@@ -16,8 +15,8 @@ const AboutPage = () => {
           pageIntroduction
           aboutIntro
           aboutImage {
-            alt
             url
+            alt
           }
           sections {
             description
@@ -46,9 +45,9 @@ const AboutPage = () => {
               padding: ["8px", "8px", "0px"],
             }}
           >
-            <Image
+            <img
               src={datoCmsOmOss.aboutImage.url}
-              alt={datoCmsOmOss.aboutImage.alt}
+              alt={datoCmsOmOss.aboutImage.url || "Björn Schriwer bygg"}
               sx={{
                 width: "100%",
                 maxHeight: ["75vh", "70vh", "unset"],

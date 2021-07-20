@@ -5,7 +5,6 @@ import { useStaticQuery, graphql } from "gatsby";
 import SEO from "../components/SEO";
 import Layout from "../components/Layout";
 import FullPageContainer from "../components/FullPageContainer";
-import Image from "../components/Image";
 
 const ContactPage = () => {
   const { datoCmsKontakt: datoCmsContact, datoCmsFooter } = useStaticQuery(
@@ -15,8 +14,8 @@ const ContactPage = () => {
           pageTitle
           pageContent
           image {
-            alt
             url
+            alt
           }
         }
         datoCmsFooter {
@@ -68,10 +67,11 @@ const ContactPage = () => {
               maxWidth: "800px",
             }}
           >
-            <Image
+            <img
               sx={{ maxWidth: ["100%"], maxHeight: "100%" }}
               src={datoCmsContact.image.url}
               alt={datoCmsContact.image.alt}
+              loading="lazy"
             />
           </div>
         </div>
